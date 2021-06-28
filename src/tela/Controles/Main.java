@@ -18,6 +18,7 @@ public class Main extends Application {
     private static Scene loginScene;
     private static Scene menuAtendenteScene;
     private static Scene menuGerenteScene;
+    private static Scene statusCargaScene;
 
     @Override
     public void start(Stage palcoPrimario) throws Exception{
@@ -42,6 +43,9 @@ public class Main extends Application {
 
         Parent fxmlConsultasAtendente  = FXMLLoader.load(getClass().getResource("../consultasAtendente.fxml"));
         consultasAtendenteScene = new Scene(fxmlConsultasAtendente,600,569);
+
+        Parent fxmlStatusCarga = FXMLLoader.load(getClass().getResource("../statusCarga.fxml"));
+        statusCargaScene = new Scene(fxmlStatusCarga,600,569);
 
         Parent fxmlConsultasGerente  = FXMLLoader.load(getClass().getResource("../consultasGerente.fxml"));
         consultasGerenteScene = new Scene(fxmlConsultasGerente,600,569);
@@ -101,6 +105,9 @@ public class Main extends Application {
 
             case "menuGerente":
                 palco.setScene(menuGerenteScene);
+                break;
+            case "statusCarga":
+                palco.setScene(statusCargaScene);
                 break;
         }
     }

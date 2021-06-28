@@ -49,12 +49,9 @@ public class ControllerMenuGerente {
                 Main.mudarScene("cadastroCarga");
                 break;
 
-            /*    Add painel de alterar situação
             case "Alterar Situaçao da Carga":
-                Main.mudarScene("situacaoCarga");
+                Main.mudarScene("statusCarga");
                 break;
-
-             */
 
             case "Cadastrar Aeroporto":
                 Main.mudarScene("cadastroAeroporto");

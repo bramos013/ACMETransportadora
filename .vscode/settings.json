@@ -1,0 +1,13 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/bruno/Documentos/javafx-sdk/lib/javafx.media.jar",
+        "/home/bruno/Documentos/javafx-sdk/lib/javafx.web.jar",
+        "/home/bruno/Documentos/javafx-sdk/lib/javafx.graphics.jar",
+        "/home/bruno/Documentos/javafx-sdk/lib/javafx.swing.jar",
+        "/home/bruno/Documentos/javafx-sdk/lib/javafx.fxml.jar",
+        "/home/bruno/Documentos/javafx-sdk/lib/javafx.controls.jar",
+        "/home/bruno/Documentos/javafx-sdk/lib/javafx.base.jar",
+        "/home/bruno/Documentos/javafx-sdk/lib/javafx-swt.jar"
+    ]
+}

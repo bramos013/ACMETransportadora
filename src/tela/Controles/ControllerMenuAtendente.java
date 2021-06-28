@@ -10,7 +10,7 @@ public class ControllerMenuAtendente {
     public RadioButton rbCadastroCliente;
     public RadioButton rbConsulta;
     public RadioButton rbCadastroCarga;
-    public RadioButton rbAlterarSituacaoCarga;
+    public RadioButton rbStatusCarga;
     public Button btnVoltar;
     public Button btnConfirmar;
     public TextArea txtArea;
@@ -47,15 +47,10 @@ public class ControllerMenuAtendente {
                 Main.mudarScene("cadastroCarga");
                 break;
 
-            /*    Add painel de alterar situação
             case "Alterar Situaçao da Carga":
-                Main.mudarScene("situacaoCarga");
+                Main.mudarScene("statusCarga");
                 break;
-
-             */
-
         }
-
 
     }
 }

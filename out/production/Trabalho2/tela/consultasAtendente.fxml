@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela.Controles.ControllerConsultasGerente">
+   <children>
+      <VBox prefHeight="20.0" prefWidth="594.0">
+         <children>
+            <MenuBar prefHeight="27.0" prefWidth="436.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Arquivo">
+                  <items>
+                    <MenuItem id="menuItemSair" fx:id="btnSair" mnemonicParsing="false" onAction="#clickFechar" text="Sair" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="17.0" layoutY="65.0" prefHeight="270.0" prefWidth="248.0">
+         <children>
+            <ImageView fx:id="imgLogo" fitHeight="227.0" fitWidth="224.0" layoutX="11.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/3500_2_04.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="21.0" layoutY="222.0" text="ACME TRANSPORTADORA">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="277.0" layoutY="67.0" prefHeight="242.0" prefWidth="308.0">
+         <children>
+            <RadioButton fx:id="rbClientes" layoutX="103.0" layoutY="139.0" mnemonicParsing="false" text="Clientes">
+               <toggleGroup>
+                  <ToggleGroup fx:id="consultas" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rbCargas" layoutX="103.0" layoutY="107.0" mnemonicParsing="false" selected="true" text="Cargas" toggleGroup="$consultas" />
+            <RadioButton fx:id="rbAeroportos" disable="true" layoutX="103.0" layoutY="71.0" mnemonicParsing="false" text="Aeroportos" toggleGroup="$consultas" />
+            <Label layoutX="51.0" layoutY="35.0" text="Realizar consultas">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnVoltar" layoutX="53.0" layoutY="190.0" mnemonicParsing="false" onAction="#clickVoltar" text="Voltar" />
+            <Button layoutX="189.0" layoutY="190.0" mnemonicParsing="false" text="Confirmar" />
+         </children></AnchorPane>
+      <TextArea fx:id="txtArea" layoutX="14.0" layoutY="351.0" prefHeight="206.0" prefWidth="573.0" />
+   </children>
+</Pane>

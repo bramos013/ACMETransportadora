@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela.Controles.ControllerLogin">
+   <children>
+      <VBox prefHeight="20.0" prefWidth="594.0">
+         <children>
+            <MenuBar prefHeight="27.0" prefWidth="436.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Arquivo">
+                  <items>
+                    <MenuItem id="menuItemSair" fx:id="btnSair" mnemonicParsing="false" text="Sair" onAction="#clickFechar"/>
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="14.0" layoutY="84.0" prefHeight="270.0" prefWidth="248.0">
+         <children>
+            <ImageView fx:id="imgLogo" fitHeight="227.0" fitWidth="224.0" layoutX="11.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/3500_2_04.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="19.0" layoutY="222.0" text="ACME TRANSPORTADORA">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="284.0" layoutY="86.0" prefHeight="242.0" prefWidth="308.0">
+         <children>
+            <Label layoutX="42.0" layoutY="79.0" text="Seja Bem Vindo">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="100.0" text="Escolha seu nível de acesso">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="rbAtendente" layoutX="42.0" layoutY="143.0" mnemonicParsing="false" selected="true" text="Atendente">
+               <toggleGroup>
+                  <ToggleGroup fx:id="login" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rbGerente" layoutX="168.0" layoutY="143.0" mnemonicParsing="false" text="Gerente" toggleGroup="$login" />
+            <Button fx:id="btnEntrar" layoutX="99.0" layoutY="181.0" mnemonicParsing="false" onAction="#clickEntrar" prefHeight="24.0" prefWidth="110.0" text="Entrar" />
+         </children>
+      </AnchorPane>
+      <TextArea fx:id="txtArea" layoutX="14.0" layoutY="365.0" prefHeight="192.0" prefWidth="573.0" />
+   </children>
+</Pane>

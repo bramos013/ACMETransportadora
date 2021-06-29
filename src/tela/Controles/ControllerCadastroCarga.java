@@ -61,36 +61,24 @@ public class ControllerCadastroCarga {
         double taxa = 0;
         Cliente cliente = null;
 
-        //////////////////////////////////////////////////
-        Aeroporto aer = new Aeroporto("POA","Salgado Filho", "BRASIL", 12.0, 1.0);
-        Aeroporto aer2 = new Aeroporto("SDU","Santos Dummont", "BRASIL", 122.0, 1.10);
-        Dados.listaAeroportos.add(aer);
-        Dados.listaAeroportos.add(aer2);
-
-        ClientePF c1 = new ClientePF("maria", "maria@gmail.com", "Av.1","123456");
-        Dados.listaClientesPF.add(c1);
-        Dados.listaClientes.add(c1);
-        ///////////////////////////////////////////////////
-
         //Pegar os codigos IATA
         for(Aeroporto aero : Dados.listaAeroportos){
-            if(aero.getcodigoIATA().equals(codIataDestino)){
+            if(aero.getcodigoIATA().equalsIgnoreCase(codIataDestino)){
                 aeroportoDestino = aero;
             }
 
-            if(aero.getcodigoIATA().equals(codIataOrigem)){
+            if(aero.getcodigoIATA().equalsIgnoreCase(codIataOrigem)){
                 aeroportoOrigem = aero;
             }
         }
 
         //Diferenciar as taxas de acordo com localidade
-        assert aeroportoOrigem != null;
         if(aeroportoOrigem.getPais().equalsIgnoreCase("BRASIL")){
             //Taxa ISQN
-            taxa = 100.0;
+            taxa = 50.0;
         }else{
             //Taxa alfandega
-            taxa = 500.0;
+            taxa = 100.0;
         }
 
         //Verificar se cliente é PF
@@ -108,23 +96,20 @@ public class ControllerCadastroCarga {
         }
 
 
-        ////APAGAR O CLIENTE PASSADO PARA TESTE ABAIXO///////////////////
-        //cliente = c1;
-
-
-        /////////////////////////////////////////////////////////////////
-
-
         //Cria a carga e add na lista
-        if(aeroportoOrigem.getPais().equalsIgnoreCase("Brasil")){
+        if(aeroportoOrigem.getPais().equalsIgnoreCase("BRASIL")){
             CargaNacional carga = new CargaNacional(codigo,altura,largura,profundidade,peso,aeroportoOrigem,aeroportoDestino,cliente,taxa);
             Dados.listaCargas.add(carga);
+            //Calcular frete
+            carga.setValorFrete(carga.calculaFrete(cliente));
             //Mostra no text area a carga cadastrada
             txtArea.setText(carga.toString());
             System.out.println(carga.toString());
         }else{
             CargaInternacional carga = new CargaInternacional(codigo,altura,largura,profundidade,peso,aeroportoOrigem,aeroportoDestino,cliente,aeroportoOrigem.getPais(),taxa);
             Dados.listaCargas.add(carga);
+            //Calcular frete
+            carga.setValorFrete(carga.calculaFrete(cliente));
             //Mostra no text area a carga cadastrada
             txtArea.setText(carga.toString());
             System.out.println(carga.toString());

@@ -28,14 +28,11 @@ public class ControllerCadastroPF {
     
     //Cadastrar Cliente Fisico
     public void cadastrarClientePF(ActionEvent event) {
-        String nome = txtNome.getText();
-            //System.out.println("Nome: " + nome);
-        String endereco = txtEndereco.getText();        
-            //System.out.println("Endereço: " + endereco);
-        String email = txtEmail.getText();
-            //System.out.println("E-mail: " + email);
+        String nome = txtNome.getText();            
+        String endereco = txtEndereco.getText();                    
+        String email = txtEmail.getText();            
         String cpf = txtCpf.getText();        
-            //System.out.println("CPF: " + cpf);
+            
         if(!Atendente.verificaEmail(email)){
             for(int i = 0; i < 2000; i++){
                 System.out.println("");
@@ -47,9 +44,6 @@ public class ControllerCadastroPF {
             alert.show();
             System.out.println("Entrada invalida, tente novamente");
         }
-
-        System.out.println("CPF: " + cpf);
-
 
         ClientePF novoClientePF = new ClientePF(nome,email,endereco,cpf);
         txtArea.setText(toStringPF());
@@ -65,6 +59,7 @@ public class ControllerCadastroPF {
         txtArea.clear();
     }
 
+    //Limpar Dados Informado pelo usuário
     public void limparDados(){
         txtNome.clear();
         txtEndereco.clear();

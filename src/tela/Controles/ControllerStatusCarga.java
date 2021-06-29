@@ -32,7 +32,7 @@ public class ControllerStatusCarga {
     }           
     
     //Altera a situação da carga
-    public String alteraSituacao(int codigo, String status) {
+    public void alteraSituacao(int codigo, String status) {
         int count = 0;
         for(int i = 0 ; i < Dados.listaCargas.size(); i++){
             if(Dados.listaCargas.get(i).getCodigo() == codigo){
@@ -41,13 +41,11 @@ public class ControllerStatusCarga {
         }
         if(count == 0){
             System.out.println("Carga não encontrada!");
-            return null;
         }
     
         for(int i = 0; i < Dados.listaCargas.size(); i++){
             if(Dados.listaCargas.get(i).getSituacao().toUpperCase().equals("CANCELADA") || Dados.listaCargas.get(i).getSituacao().toUpperCase().equals("ENTREGUE")){
                 System.out.println("Erro: Status não pode ser alterado!");
-                return null;
             }
         }
     
@@ -63,9 +61,7 @@ public class ControllerStatusCarga {
                 }
             }
         }
-        System.out.println("Status alterado com sucesso!");
-        return null;
-    
+        System.out.println("Status alterado com sucesso!");    
     }
     
     //fechar app

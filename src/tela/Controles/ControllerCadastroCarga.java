@@ -16,8 +16,8 @@ public class ControllerCadastroCarga {
     public TextField txtAeroDestino;
     public Button btnLimpar;
     public Button btnCadastrar;
+    public Button btnVoltar;
     public TextArea txtArea;
-    public TextField txtCodigoCarga;
     public TextField txtDadoCliente;
 
     //fechar app
@@ -26,20 +26,30 @@ public class ControllerCadastroCarga {
     }
 
     public void clickLimpar(javafx.event.ActionEvent event){
+        limparDados();
+        txtArea.clear();
+    }
+
+    public void limparDados(){
         txtAltura.clear();
         txtLargura.clear();
         txtProfundidade.clear();
         txtPeso.clear();
         txtAeroOrigem.clear();
         txtAeroDestino.clear();
-        txtArea.clear();
+        txtDadoCliente.clear();
+    }
+
+    //voltar tela de login
+    public void clickVoltar(javafx.event.ActionEvent event){
+        Main.mudarScene("login");
     }
 
     public void clickCadastrar(javafx.event.ActionEvent event){
         //Limpar área de texto
         txtArea.clear();
 
-        Integer codigo = Integer.valueOf(txtDadoCliente.getText());
+        Integer codigo = Dados.listaCargas.size();
         Double altura = Double.valueOf(txtAltura.getText());
         Double largura = Double.valueOf(txtLargura.getText());
         Double peso = Double.valueOf(txtPeso.getText());
@@ -50,6 +60,17 @@ public class ControllerCadastroCarga {
         Aeroporto aeroportoOrigem = null;
         double taxa = 0;
         Cliente cliente = null;
+
+        //////////////////////////////////////////////////
+        Aeroporto aer = new Aeroporto("POA","Salgado Filho", "BRASIL", 12.0, 1.0);
+        Aeroporto aer2 = new Aeroporto("SDU","Santos Dummont", "BRASIL", 122.0, 1.10);
+        Dados.listaAeroportos.add(aer);
+        Dados.listaAeroportos.add(aer2);
+
+        ClientePF c1 = new ClientePF("maria", "maria@gmail.com", "Av.1","123456");
+        Dados.listaClientesPF.add(c1);
+        Dados.listaClientes.add(c1);
+        ///////////////////////////////////////////////////
 
         //Pegar os codigos IATA
         for(Aeroporto aero : Dados.listaAeroportos){
@@ -63,7 +84,8 @@ public class ControllerCadastroCarga {
         }
 
         //Diferenciar as taxas de acordo com localidade
-        if(aeroportoOrigem.getPais().toUpperCase().equals("BRASIL")){
+        assert aeroportoOrigem != null;
+        if(aeroportoOrigem.getPais().equalsIgnoreCase("BRASIL")){
             //Taxa ISQN
             taxa = 100.0;
         }else{
@@ -85,13 +107,20 @@ public class ControllerCadastroCarga {
             }
         }
 
+
+        ////APAGAR O CLIENTE PASSADO PARA TESTE ABAIXO///////////////////
+        cliente = c1;
+
+
+        /////////////////////////////////////////////////////////////////
+
+
         //Cria a carga e add na lista
-        if(aeroportoOrigem.getPais().toUpperCase().equals("BRASIL")){
+        if(aeroportoOrigem.getPais().equalsIgnoreCase("Brasil")){
             CargaNacional carga = new CargaNacional(codigo,altura,largura,profundidade,peso,aeroportoOrigem,aeroportoDestino,cliente,taxa);
             Dados.listaCargas.add(carga);
             //Mostra no text area a carga cadastrada
             txtArea.setText(carga.toString());
-
         }else{
             CargaInternacional carga = new CargaInternacional(codigo,altura,largura,profundidade,peso,aeroportoOrigem,aeroportoDestino,cliente,aeroportoOrigem.getPais(),taxa);
             Dados.listaCargas.add(carga);
@@ -99,8 +128,8 @@ public class ControllerCadastroCarga {
             txtArea.setText(carga.toString());
         }
 
+        limparDados();
     }
-
 
 
 }

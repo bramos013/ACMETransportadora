@@ -110,7 +110,9 @@ public class CargaInternacional extends Carga {
     public String toString() {
         return super.toString() +
                 "\nPaís de Origem: " + paisOrigem +
-                "\nTipo de Carga: Internacional";                
+                "\nTipo de Carga: Internacional" +
+                "\n------------------------------------------" +
+                "\n------------------------------------------";
     }
 
 

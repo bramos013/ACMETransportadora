@@ -102,7 +102,9 @@ public class CargaNacional extends Carga {
     @Override
     public String toString() {
         return super.toString() +
-        "\nTipo de Carga: Nacional ";                
+                "\nTipo de Carga: Nacional " +
+                "\n------------------------------------------" +
+                "\n------------------------------------------";
 
     }
 

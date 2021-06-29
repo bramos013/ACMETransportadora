@@ -88,19 +88,18 @@ public class Carga {
 
     public String toString() {
         return
-                "\nDados da Carga\n" +
-                        "\nCliente: " + cliente +
-                        "\nAeroporto de Origem: " + aeroportoOrigem.getNome() +
-                        "\nAeroporto de Destino: " + aeroportoDestino.getNome() +
-                        "\nAltura: " + altura +
-                        "\nLargura: " + largura +
-                        "\nPeso: " + peso +
-                        "\nProfundidade: " + profundidade +
-                        "\nSituação: " + situacao +
-                        "\nValor do Frete: R$ " + valorFrete +
-                        "\nCódigo: " + codigo +
-                        "\n------------------------------------------" +
-                        "\n------------------------------------------";
+                "\nDados da Carga" +
+                "\n" + cliente +
+                "\nAeroporto de Origem: " + aeroportoOrigem.getNome() +
+                "\nAeroporto de Destino: " + aeroportoDestino.getNome() +
+                "\nAltura: " + altura +
+                "\nLargura: " + largura +
+                "\nPeso: " + peso +
+                "\nProfundidade: " + profundidade +
+                "\nSituação: " + situacao +
+                "\nValor do Frete: R$ " + valorFrete +
+                "\nCódigo: " + codigo;
+
     }
 
 }

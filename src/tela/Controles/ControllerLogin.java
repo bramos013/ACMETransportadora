@@ -24,9 +24,11 @@ public class ControllerLogin {
 
         if(opSelecionada.getText().equals("Atendente")){
             Main.mudarScene("menuAtendente");
+            rbGerente.setDisable(true);
 
         }else if(opSelecionada.getText().equals("Gerente")){
             Main.mudarScene("menuGerente");
+            rbAtendente.setDisable(true);
         }
 
     }

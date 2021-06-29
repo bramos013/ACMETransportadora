@@ -42,11 +42,11 @@ public class Aeroporto {
     }
 
     public String toString(){
-        String Aeroporto = "";
-        Aeroporto = Aeroporto + "Aeroporto de " + nome + "\n";
-        Aeroporto = Aeroporto + "Codigo IATA: " + codigoIATA + "\n";
-        Aeroporto = Aeroporto + "Pais: " + pais + "\n";
-        Aeroporto = Aeroporto + "Latitude: " + latitude + " e Longitude: " + longitude;
-        return Aeroporto;
+        return "Aeroporto de " + nome + "\n" +
+                "Codigo IATA: " + codigoIATA + "\n"+
+                "Pais: " + pais + "\n"+
+                "Latitude: " + latitude + "\n" +
+                " e Longitude: " + longitude;
+
     }
 }

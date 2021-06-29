@@ -1,10 +1,7 @@
 package tela.Controles;
 
 import codigo.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class ControllerCadastroCarga {
     public MenuItem btnSair;
@@ -46,76 +43,114 @@ public class ControllerCadastroCarga {
     }
 
     public void clickCadastrar(javafx.event.ActionEvent event){
-        //Limpar área de texto
-        txtArea.clear();
+        try{
+            //Limpar área de texto
+            txtArea.clear();
 
-        Integer codigo = Dados.listaCargas.size();
-        Double altura = Double.valueOf(txtAltura.getText());
-        Double largura = Double.valueOf(txtLargura.getText());
-        Double peso = Double.valueOf(txtPeso.getText());
-        Double profundidade = Double.valueOf(txtProfundidade.getText());
-        String codIataOrigem = txtAeroOrigem.getText();
-        String codIataDestino = txtAeroDestino.getText();
-        Aeroporto aeroportoDestino = null;
-        Aeroporto aeroportoOrigem = null;
-        double taxa = 0;
-        Cliente cliente = null;
+            Integer codigo = Dados.listaCargas.size();
+            Double altura = Double.valueOf(txtAltura.getText());
+            Double largura = Double.valueOf(txtLargura.getText());
+            Double peso = Double.valueOf(txtPeso.getText());
+            Double profundidade = Double.valueOf(txtProfundidade.getText());
+            String codIataOrigem = txtAeroOrigem.getText();
+            String codIataDestino = txtAeroDestino.getText();
+            Aeroporto aeroportoDestino = null;
+            Aeroporto aeroportoOrigem = null;
+            double taxa = 0;
+            Cliente cliente = null;
 
-        //Pegar os codigos IATA
-        for(Aeroporto aero : Dados.listaAeroportos){
-            if(aero.getcodigoIATA().equalsIgnoreCase(codIataDestino)){
-                aeroportoDestino = aero;
+            //Verificar se todos os campos foram preenchidos
+            if(txtAltura.getText().isEmpty()||txtLargura.getText().isEmpty()||txtProfundidade.getText().isEmpty()||txtPeso.getText().isEmpty()||txtAeroDestino.getText().isEmpty()||txtAeroOrigem.getText().isEmpty()||txtDadoCliente.getText().isEmpty()) {
+                System.err.println("Todos os campos devem ser preenchidos para fazer o cadastro.");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erro");
+                alert.setHeaderText("Todos os campos devem ser preenchidos para fazer o cadastro.");
+                alert.show();
+                return;
             }
 
-            if(aero.getcodigoIATA().equalsIgnoreCase(codIataOrigem)){
-                aeroportoOrigem = aero;
+            //Pegar os codigos IATA e verificar se os codigos IATA estão cadastrados
+            for(Aeroporto aero : Dados.listaAeroportos){
+                if(aero.getcodigoIATA().equalsIgnoreCase(codIataDestino)){
+                    aeroportoDestino = aero;
+                }
+
+                if(aero.getcodigoIATA().equalsIgnoreCase(codIataOrigem)){
+                    aeroportoOrigem = aero;
+                }
             }
-        }
-
-        //Diferenciar as taxas de acordo com localidade
-        if(aeroportoOrigem.getPais().equalsIgnoreCase("BRASIL")){
-            //Taxa ISQN
-            taxa = 50.0;
-        }else{
-            //Taxa alfandega
-            taxa = 100.0;
-        }
-
-        //Verificar se cliente é PF
-        for(ClientePF clientes : Dados.listaClientesPF){
-            if(clientes.getCpf().equals(txtDadoCliente.getText())){
-                cliente = clientes;
+            if(aeroportoDestino == null || aeroportoOrigem == null){
+                System.err.println("Código IATA inválido");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erro");
+                alert.setHeaderText("Código IATA inválido.");
+                alert.setContentText("Informe apenas códigos IATA já cadastrados no sistema.");
+                alert.show();
+                return;
             }
-        }
 
-        //Verificar se cliente é PJ
-        for(ClientePJ clientes : Dados.listaClientesPJ){
-            if(clientes.getCnpj().equals(txtDadoCliente.getText())){
-                cliente = clientes;
+            //Diferenciar as taxas de acordo com localidade
+            if(aeroportoOrigem.getPais().equalsIgnoreCase("BRASIL")){
+                //Taxa ISQN
+                taxa = 50.0;
+            }else{
+                //Taxa alfandega
+                taxa = 100.0;
             }
+
+            //Verificar se cliente é PF/PJ e se está cadastrado
+            for(ClientePF clientes : Dados.listaClientesPF){
+                if(clientes.getCpf().equals(txtDadoCliente.getText())){
+                    cliente = clientes;
+                }
+            }
+            for(ClientePJ clientes : Dados.listaClientesPJ){
+                if(clientes.getCnpj().equals(txtDadoCliente.getText())){
+                    cliente = clientes;
+                }
+            }
+            if(cliente == null){
+                System.err.println("Cliente não cadastrado!");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erro");
+                alert.setHeaderText("Cliente não cadastrado!");
+                alert.setContentText("Informe CPF/CNPJ de clientes já cadastrados no sistema.");
+                alert.show();
+                return;
+            }
+
+
+            //Cria a carga e add na lista
+            if(aeroportoOrigem.getPais().equalsIgnoreCase("BRASIL")){
+                CargaNacional carga = new CargaNacional(codigo,altura,largura,profundidade,peso,aeroportoOrigem,aeroportoDestino,cliente,taxa);
+                Dados.listaCargas.add(carga);
+                //Calcular frete
+                carga.setValorFrete(carga.calculaFrete(cliente));
+                //Mostra no text area a carga cadastrada
+                txtArea.setText(carga.toString());
+                System.out.println(carga.toString());
+            }else{
+                CargaInternacional carga = new CargaInternacional(codigo,altura,largura,profundidade,peso,aeroportoOrigem,aeroportoDestino,cliente,aeroportoOrigem.getPais(),taxa);
+                Dados.listaCargas.add(carga);
+                //Calcular frete
+                carga.setValorFrete(carga.calculaFrete(cliente));
+                //Mostra no text area a carga cadastrada
+                txtArea.setText(carga.toString());
+                System.out.println(carga.toString());
+            }
+
+        }catch (RuntimeException e){
+                System.err.println("Os campos Altura, Largura, Profundidade e Peso devem ser preenchidos com valores numéricos");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erro");
+                alert.setHeaderText("Você deve preencher corretamente todos os campos para fazer o cadastro.");
+                alert.setContentText("Preencha os campos Altura, Largura, Profundidade e Peso com valores numéricos");
+                alert.show();
+
+
+        }finally {
+            limparDados();
         }
-
-
-        //Cria a carga e add na lista
-        if(aeroportoOrigem.getPais().equalsIgnoreCase("BRASIL")){
-            CargaNacional carga = new CargaNacional(codigo,altura,largura,profundidade,peso,aeroportoOrigem,aeroportoDestino,cliente,taxa);
-            Dados.listaCargas.add(carga);
-            //Calcular frete
-            carga.setValorFrete(carga.calculaFrete(cliente));
-            //Mostra no text area a carga cadastrada
-            txtArea.setText(carga.toString());
-            System.out.println(carga.toString());
-        }else{
-            CargaInternacional carga = new CargaInternacional(codigo,altura,largura,profundidade,peso,aeroportoOrigem,aeroportoDestino,cliente,aeroportoOrigem.getPais(),taxa);
-            Dados.listaCargas.add(carga);
-            //Calcular frete
-            carga.setValorFrete(carga.calculaFrete(cliente));
-            //Mostra no text area a carga cadastrada
-            txtArea.setText(carga.toString());
-            System.out.println(carga.toString());
-        }
-
-        limparDados();
     }
 
 

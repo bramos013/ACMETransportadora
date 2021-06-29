@@ -2,10 +2,7 @@ package tela.Controles;
 
 import codigo.Aeroporto;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class ControllerCadastroAeroporto {
     public MenuItem btnSair;
@@ -44,27 +41,59 @@ public class ControllerCadastroAeroporto {
     }
 
     public void clickCadastroAeroporto() {
-        //limpar txtArea
-        txtArea.clear();
+        try{
+            //limpar txtArea
+            txtArea.clear();
 
-        String codigoIATA = txtCodigoIATA.getText().toUpperCase();
-        String nome = txtNomeAeroporto.getText();
-        String pais = txtPais.getText().toUpperCase();
-        double latitude = Double.parseDouble(txtLatitude.getText());
-        double longitude = Double.parseDouble(txtLongitude.getText());
+            String codigoIATA = txtCodigoIATA.getText().toUpperCase();
+            String nome = txtNomeAeroporto.getText();
+            String pais = txtPais.getText().toUpperCase();
+            double latitude = Double.parseDouble(txtLatitude.getText());
+            double longitude = Double.parseDouble(txtLongitude.getText());
 
-        for(Aeroporto aeroportos : Dados.listaAeroportos){
-            if(aeroportos.getcodigoIATA().equalsIgnoreCase(codigoIATA)){
-                System.out.println("ERRO! Código já existente\nImpossível fazer o cadastro...");
-                txtArea.setText("ERRO! Código já existente\nImpossível fazer o cadastro...");
+            if(codigoIATA.isEmpty()||nome.isEmpty()||pais.isEmpty()){
+                System.out.println("Todos os campos devem ser preenchidos para fazer o cadastro.");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Erro");
+                alert.setHeaderText("Todos os campos devem ser preenchidos para fazer o cadastro.");
+                alert.show();
+                return;
+
+            }else{
+                for(Aeroporto aeroportos : Dados.listaAeroportos){
+                    if(aeroportos.getcodigoIATA().equalsIgnoreCase(codigoIATA)){
+                        System.out.println("ERRO! Código já existente\nImpossível fazer o cadastro...");
+
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Erro");
+                        alert.setHeaderText("Código IATA já cadastrado!");
+                        alert.setContentText("Informe um código IATA diferente...");
+                        alert.show();
+                        return;
+                    }
+                }
+                Aeroporto novoAeroporto = new Aeroporto(codigoIATA, nome, pais, latitude, longitude);
+                Dados.listaAeroportos.add(novoAeroporto);
+
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Cadastrado");
+                alert.setHeaderText("Aeroporto cadastrado com sucesso!");
+                alert.show();
+                txtArea.setText("Cadastro efetuado com sucesso!\n" + novoAeroporto.toString());
+                System.out.println("Cadastro efetuado com sucesso!" + novoAeroporto.toString());
                 return;
             }
-        }
-        Aeroporto novoAeroporto = new Aeroporto(codigoIATA, nome, pais, latitude, longitude);
-        Dados.listaAeroportos.add(novoAeroporto);
 
-        txtArea.setText("Cadastro efetuado com sucesso!\n" + novoAeroporto.toString());
-        System.out.println("Cadastro efetuado com sucesso!" + novoAeroporto.toString());
-        limparDados();
+        }catch (RuntimeException e){
+            System.err.println("Você deve preencher corretamente todos os campos para fazer o cadastro.");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText("Você deve preencher corretamente todos os campos para fazer o cadastro.");
+            alert.setContentText("Latitude e Longitude devem ser números para realizar a operação... ");
+            alert.show();
+        }finally {
+            limparDados();
+        }
+
     }
 }

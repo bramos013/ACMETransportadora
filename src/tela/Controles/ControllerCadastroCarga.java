@@ -109,7 +109,7 @@ public class ControllerCadastroCarga {
 
 
         ////APAGAR O CLIENTE PASSADO PARA TESTE ABAIXO///////////////////
-        cliente = c1;
+        //cliente = c1;
 
 
         /////////////////////////////////////////////////////////////////
@@ -121,11 +121,13 @@ public class ControllerCadastroCarga {
             Dados.listaCargas.add(carga);
             //Mostra no text area a carga cadastrada
             txtArea.setText(carga.toString());
+            System.out.println(carga.toString());
         }else{
             CargaInternacional carga = new CargaInternacional(codigo,altura,largura,profundidade,peso,aeroportoOrigem,aeroportoDestino,cliente,aeroportoOrigem.getPais(),taxa);
             Dados.listaCargas.add(carga);
             //Mostra no text area a carga cadastrada
             txtArea.setText(carga.toString());
+            System.out.println(carga.toString());
         }
 
         limparDados();

@@ -13,7 +13,7 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Arquivo">
                   <items>
-                    <MenuItem id="menuItemSair" fx:id="btnSair" mnemonicParsing="false" text="Sair" onAction="#clickFechar" />
+                    <MenuItem id="menuItemSair" fx:id="btnSair" mnemonicParsing="false" onAction="#clickFechar" text="Sair" />
                   </items>
                 </Menu>
               </menus>
@@ -63,8 +63,9 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Button fx:id="btnLimpar" layoutX="73.0" layoutY="205.0" mnemonicParsing="false" text="Limpar" />
-            <Button fx:id="btnCadastrar" layoutX="172.0" layoutY="205.0" mnemonicParsing="false" onAction="#cadastrarClientePF" text="Cadastrar" />
+            <Button fx:id="btnLimpar" layoutX="133.0" layoutY="205.0" mnemonicParsing="false" onAction="#clickLimpar" text="Limpar" />
+            <Button fx:id="btnCadastrar" layoutX="223.0" layoutY="205.0" mnemonicParsing="false" onAction="#cadastrarClientePF" text="Cadastrar" />
+            <Button fx:id="btnVoltar" layoutX="37.0" layoutY="205.0" mnemonicParsing="false" onAction="#clickVoltar" text="Voltar" />
          </children></AnchorPane>
       <TextArea fx:id="txtArea" layoutX="14.0" layoutY="351.0" prefHeight="206.0" prefWidth="573.0" />
    </children>

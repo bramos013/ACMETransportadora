@@ -1,5 +1,6 @@
 package tela.Controles;
 
+import codigo.ClientePF;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -27,28 +28,38 @@ public class ControllerCadastroPF {
     //Cadastrar Cliente Fisico
     public void cadastrarClientePF(ActionEvent event) {
         String nome = txtNome.getText();
-            System.out.println("Nome: " + nome);        
+            //System.out.println("Nome: " + nome);
         String endereco = txtEndereco.getText();        
-            System.out.println("Endereço: " + endereco);
+            //System.out.println("Endereço: " + endereco);
         String email = txtEmail.getText();
-            System.out.println("E-mail: " + email);        
+            //System.out.println("E-mail: " + email);
         String cpf = txtCpf.getText();        
-            System.out.println("CPF: " + cpf);
+            //System.out.println("CPF: " + cpf);
 
+        ClientePF novoClientePF = new ClientePF(nome,email,endereco,cpf);
         txtArea.setText(toStringPF());
+        System.out.println(novoClientePF.toString());
+        Dados.listaClientes.add(novoClientePF);
+        Dados.listaClientesPF.add(novoClientePF);
+        limparDados();
     }
     
     //Limpar Formulário Cadastro
     public void clickLimpar(ActionEvent event){
-        txtNome.clear();
-        txtEndereco.clear();
-        txtEmail.clear();
-        txtCpf.clear();        
+        limparDados();
         txtArea.clear();
     }
 
-    //Voltar Menu
-    public void clickVoltar(ActionEvent event){
+    public void limparDados(){
+        txtNome.clear();
+        txtEndereco.clear();
+        txtEmail.clear();
+        txtCpf.clear();
+    }
+
+    //voltar tela de login
+    public void clickVoltar(javafx.event.ActionEvent event){
+        Main.mudarScene("login");
     }
 
     //Mostrar os dados

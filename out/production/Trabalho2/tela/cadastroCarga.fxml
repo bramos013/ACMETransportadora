@@ -10,13 +10,13 @@
       <VBox prefHeight="20.0" prefWidth="594.0">
          <children>
             <MenuBar prefHeight="27.0" prefWidth="436.0">
-              <menus>
-                <Menu mnemonicParsing="false" text="Arquivo">
-                  <items>
-                    <MenuItem id="menuItemSair" fx:id="btnSair" mnemonicParsing="false" text="Sair" />
-                  </items>
-                </Menu>
-              </menus>
+               <menus>
+                  <Menu mnemonicParsing="false" text="Arquivo">
+                     <items>
+                        <MenuItem id="menuItemSair" fx:id="btnSair" mnemonicParsing="false" onAction="#clickFechar" text="Sair" />
+                     </items>
+                  </Menu>
+               </menus>
             </MenuBar>
          </children>
       </VBox>
@@ -34,49 +34,56 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="277.0" layoutY="67.0" prefHeight="270.0" prefWidth="308.0">
+      <AnchorPane layoutX="277.0" layoutY="28.0" prefHeight="309.0" prefWidth="308.0">
          <children>
-            <Label layoutX="60.0" layoutY="12.0" text="Cadastrar Carga">
+            <Label layoutX="60.0" layoutY="7.0" text="Cadastrar Carga">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="35.0" layoutY="44.0" text="Altura">
+            <Label layoutX="35.0" layoutY="37.0" text="Altura">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
-            <TextField fx:id="txtAltura" layoutX="35.0" layoutY="60.0" prefHeight="24.0" prefWidth="58.0" />
-            <TextField fx:id="txtLargura" layoutX="187.0" layoutY="59.0" prefHeight="24.0" prefWidth="58.0" />
-            <Label layoutX="188.0" layoutY="44.0" text="Largura">
+            <TextField fx:id="txtAltura" layoutX="35.0" layoutY="53.0" prefHeight="24.0" prefWidth="58.0" />
+            <TextField fx:id="txtLargura" layoutX="187.0" layoutY="52.0" prefHeight="24.0" prefWidth="58.0" />
+            <Label layoutX="188.0" layoutY="37.0" text="Largura">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
-            <TextField fx:id="txtProfundidade" layoutX="35.0" layoutY="106.0" prefHeight="24.0" prefWidth="58.0" />
-            <Label layoutX="36.0" layoutY="91.0" text="Profundidade">
+            <TextField fx:id="txtProfundidade" layoutX="35.0" layoutY="99.0" prefHeight="24.0" prefWidth="58.0" />
+            <Label layoutX="36.0" layoutY="84.0" text="Profundidade">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="txtPeso" layoutX="189.0" layoutY="103.0" prefHeight="24.0" prefWidth="58.0" />
-            <Label layoutX="190.0" layoutY="88.0" text="Peso">
+            <TextField fx:id="txtPeso" layoutX="189.0" layoutY="96.0" prefHeight="24.0" prefWidth="58.0" />
+            <Label layoutX="190.0" layoutY="81.0" text="Peso">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="txtAeroOrigem" layoutX="34.0" layoutY="158.0" prefHeight="24.0" prefWidth="262.0" />
-            <Label layoutX="35.0" layoutY="142.0" text="Aeroporto Origem(Codigo IATA)">
+            <TextField fx:id="txtAeroOrigem" layoutX="34.0" layoutY="151.0" prefHeight="24.0" prefWidth="262.0" />
+            <Label layoutX="35.0" layoutY="135.0" text="Aeroporto Origem(Codigo IATA)">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="txtAeroDestino" layoutX="32.0" layoutY="206.0" prefHeight="24.0" prefWidth="262.0" />
-            <Label layoutX="33.0" layoutY="190.0" text="Aeroporto Destino(Codigo IATA)">
+            <TextField fx:id="txtAeroDestino" layoutX="32.0" layoutY="199.0" prefHeight="24.0" prefWidth="262.0" />
+            <Label layoutX="33.0" layoutY="183.0" text="Aeroporto Destino(Codigo IATA)">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Button fx:id="btnLimpar" layoutX="73.0" layoutY="238.0" mnemonicParsing="false" text="Limpar" />
-            <Button fx:id="btnCadastrar" layoutX="166.0" layoutY="238.0" mnemonicParsing="false" text="Cadastrar" />
+            <Button fx:id="btnLimpar" layoutX="128.0" layoutY="286.0" mnemonicParsing="false" onAction="#clickLimpar" text="Limpar" />
+            <Button fx:id="btnCadastrar" layoutX="213.0" layoutY="286.0" mnemonicParsing="false" onAction="#clickCadastrar" text="Cadastrar" />
+            <Label layoutX="34.0" layoutY="231.0" text="CPF/CNPJ do Cliente">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtDadoCliente" layoutX="33.0" layoutY="250.0" prefHeight="25.0" prefWidth="127.0" />
+            <Button fx:id="btnVoltar" layoutX="38.0" layoutY="286.0" mnemonicParsing="false" onAction="#clickVoltar" text="Voltar" />
          </children></AnchorPane>
       <TextArea fx:id="txtArea" layoutX="14.0" layoutY="351.0" prefHeight="206.0" prefWidth="573.0" />
    </children>

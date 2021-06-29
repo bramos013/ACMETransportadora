@@ -19,7 +19,6 @@ public class ControllerCadastroPF {
     public Button btnLimpar;
     public Button btnCadastrar;
     public TextArea txtArea;
-    public String clienteCadastrado;
     
 
     //fechar app
@@ -33,23 +32,35 @@ public class ControllerCadastroPF {
         String endereco = txtEndereco.getText();                    
         String email = txtEmail.getText();            
         String cpf = txtCpf.getText();        
-            
-        if(!Atendente.verificaEmail(email)){
-            for(int i = 0; i < 2000; i++){
-                System.out.println("");
-            }
-            Alert alert = new Alert(AlertType.WARNING);
+
+        if(nome.equals("")||endereco.equals("")||email.equals("")||cpf.equals("")){
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Atenção");
+            alert.setHeaderText("Entrada inválida!");
+            alert.setContentText("Você deve preencher todos os campos para realizar o cadastro.");
+            alert.show();
+            System.out.println("Você deve preencher todos os campos para realizar o cadastro.");
+            limparDados();
+            return;
+
+        }else if(!Atendente.verificaEmail(email)){
+            Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Atenção");
             alert.setHeaderText("E-mail invalido");
             alert.setContentText("Informar um e-mail no padrão email@teste.com! ");
             alert.show();
-        }
+            System.out.println("E-mail invalido");
+            limparDados();
+            return;
 
-        ClientePF novoClientePF = new ClientePF(nome,email,endereco,cpf);
-        txtArea.setText(novoClientePF.toString());
-        Dados.listaClientes.add(novoClientePF);
-        Dados.listaClientesPF.add(novoClientePF);
-        limparDados();
+        }else{
+            ClientePF novoClientePF = new ClientePF(nome,email,endereco,cpf);
+            txtArea.setText(novoClientePF.toString());
+            Dados.listaClientes.add(novoClientePF);
+            Dados.listaClientesPF.add(novoClientePF);
+            limparDados();
+            return;
+        }
     }
 
     //Limpar Formulário Cadastro

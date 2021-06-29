@@ -1,5 +1,6 @@
 package tela.Controles;
 
+import codigo.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -88,4 +89,5 @@ public class ControllerConsultasGerente {
         }
 
     }
+
 }

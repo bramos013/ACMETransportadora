@@ -550,6 +550,42 @@ public class Atendente {
 
     }
 
+    public String alteraSituacao(int codigo, String status) {
+    int count = 0;
+    for(int i = 0 ; i < listaDeCargas.size(); i++){
+        if(listaDeCargas.get(i).getCodigo() == codigo){
+            count++;
+        }
+    }
+    if(count == 0){
+        System.out.println("Carga não encontrada!");
+        return null;
+    }
+
+    for(int i = 0; i < listaDeCargas.size(); i++){
+        if(listaDeCargas.get(i).getSituacao().toUpperCase().equals("CANCELADA") || listaDeCargas.get(i).getSituacao().toUpperCase().equals("ENTREGUE")){
+            System.out.println("Erro: Status não pode ser alterado!");
+            return null;
+        }
+    }
+
+    for(int i = 0 ; i < listaDeCargas.size(); i++){
+        if(listaDeCargas.get(i).getCodigo() == codigo){
+            if(status=="Cancelada"){
+                System.out.println("Alterando para 'Cancelada'");
+                listaDeCargas.get(i).setSituacao("Cancelada");
+
+            }else if(status=="Entregue"){
+                System.out.println("Alterando para 'Entregue'");
+                listaDeCargas.get(i).setSituacao("Entregue");
+            }
+        }
+    }
+    System.out.println("Status alterado com sucesso!");
+    return null;
+
+}
+
     public Aeroporto selecionaAeroporto(){
         Aeroporto aeroportoSelecionado = null;
         String codigoIATA = "";

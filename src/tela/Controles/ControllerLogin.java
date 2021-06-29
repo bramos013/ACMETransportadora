@@ -14,12 +14,12 @@ public class ControllerLogin {
     public TextArea txtArea;
 
     //fechar app
-    public void clickFechar(javafx.event.ActionEvent event){
+    public void clickFechar(ActionEvent event){
         System.exit(0);
     }
 
     //entrar em um menu
-    public void clickEntrar(javafx.event.ActionEvent event){
+    public void clickEntrar(ActionEvent event){
         RadioButton opSelecionada = (RadioButton) login.getSelectedToggle();
 
         if(opSelecionada.getText().equals("Atendente")){

@@ -1,6 +1,5 @@
 package tela.Controles;
 
-import codigo.Atendente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

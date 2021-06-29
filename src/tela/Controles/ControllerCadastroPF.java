@@ -1,5 +1,6 @@
 package tela.Controles;
 
+import codigo.Atendente;
 import codigo.ClientePF;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
@@ -35,6 +36,20 @@ public class ControllerCadastroPF {
             //System.out.println("E-mail: " + email);
         String cpf = txtCpf.getText();        
             //System.out.println("CPF: " + cpf);
+        if(!Atendente.verificaEmail(email)){
+            for(int i = 0; i < 2000; i++){
+                System.out.println("");
+            }
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Atenção");
+            alert.setHeaderText("E-mail invalido");
+            alert.setContentText("Informar um e-mail no padrão email@teste.com! ");
+            alert.show();
+            System.out.println("Entrada invalida, tente novamente");
+        }
+
+        System.out.println("CPF: " + cpf);
+
 
         ClientePF novoClientePF = new ClientePF(nome,email,endereco,cpf);
         txtArea.setText(toStringPF());
@@ -43,7 +58,7 @@ public class ControllerCadastroPF {
         Dados.listaClientesPF.add(novoClientePF);
         limparDados();
     }
-    
+
     //Limpar Formulário Cadastro
     public void clickLimpar(ActionEvent event){
         limparDados();

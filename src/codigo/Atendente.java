@@ -16,7 +16,7 @@ public class Atendente {
 
     List<Aeroporto> listaDeAeroportos = new ArrayList<>();
 
-    private Boolean verificaEmail(String email){
+    public static Boolean verificaEmail(String email){
         //Cria variaveis e converte a String em um Array de Char
         int arroba, ponto, fimComPonto, medidorDeArrobas;
         arroba = 0;

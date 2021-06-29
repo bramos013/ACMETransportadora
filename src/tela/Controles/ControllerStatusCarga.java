@@ -31,7 +31,7 @@ public class ControllerStatusCarga {
         }        
     }           
     
-    //
+    //Altera a situação da carga
     public String alteraSituacao(int codigo, String status) {
         int count = 0;
         for(int i = 0 ; i < Dados.listaCargas.size(); i++){

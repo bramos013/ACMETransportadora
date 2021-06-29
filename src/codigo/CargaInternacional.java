@@ -100,6 +100,27 @@ public class CargaInternacional extends Carga {
         return true;
     }
 
+
+    public double calculaFrete(Cliente cliente){
+        //Valor Base = (Altura X Largura X Profundidade X Peso X 10)
+        double valorBase = (super.getAltura() * super.getLargura() * super.getProfundidade() * super.getPeso() * 10);
+
+        //	Valor por distância = (Distância entre aeroportos (em quilômetros)) / 100
+        double valorDistancia=100;//teste
+
+        valorDistancia = calculoDistancia();
+        //calculoDistancia
+
+        //Valor do frete = (Valor base X Valor por distância) + Taxa adicional(Alfandega)
+        double valorFrete = (valorBase * valorDistancia) + taxaAlfandega;
+
+        valorFrete= Math.round(valorFrete);
+        //Atributo valorFrete recebe o dado valorFrete
+        super.setValorFrete(valorFrete);
+        return valorFrete;
+    }
+
+
     public String getPaisOrigem() {
         return paisOrigem;
     }
@@ -111,6 +132,7 @@ public class CargaInternacional extends Carga {
         return super.toString() +
                 "\nPaís de Origem: " + paisOrigem +
                 "\nTipo de Carga: Internacional" +
+                "\nValor do Frete: R$ " + super.getValorFrete() +
                 "\n------------------------------------------" +
                 "\n------------------------------------------";
     }

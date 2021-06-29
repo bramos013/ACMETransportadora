@@ -59,9 +59,9 @@ public class Carga {
     public String getSituacao() {
         return situacao;
     }
-    
-    public Aeroporto getAeroportoOrigem() {
-        return aeroportoOrigem;
+
+    public double getValorFrete() {
+        return valorFrete;
     }
 
     public void setValorFrete(double valorFrete) {
@@ -82,6 +82,10 @@ public class Carga {
         }
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
     public void setSituacao(String situacao) {
         this.situacao=situacao;
     }
@@ -97,7 +101,6 @@ public class Carga {
                 "\nPeso: " + peso +
                 "\nProfundidade: " + profundidade +
                 "\nSituação: " + situacao +
-                "\nValor do Frete: R$ " + valorFrete +
                 "\nCódigo: " + codigo;
 
     }

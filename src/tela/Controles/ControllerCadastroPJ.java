@@ -42,7 +42,7 @@ public class ControllerCadastroPJ {
         }
 
         ClientePJ novoClientePJ = new ClientePJ(nome,email,endereco,cnpj,nomeFantasia);
-        txtArea.setText(toStringPJ());
+        txtArea.setText(novoClientePJ.toString());
         System.out.println(novoClientePJ.toString());
         Dados.listaClientes.add(novoClientePJ);
         Dados.listaClientesPJ.add(novoClientePJ);
@@ -73,15 +73,4 @@ public class ControllerCadastroPJ {
     public void clickVoltar(ActionEvent event){
             Main.mudarScene("login");
         }
-
-    //Mostrar os dados
-    public String toStringPJ() {
-        return
-            "Cliente Cadastrado "+
-            "\nNome: " + txtNome.getText() +
-            "\nEndereço: " + txtEndereco.getText() +
-            "\nEmail: " + txtEmail.getText() +
-            "\nCNPJ: " + txtCnpj.getText()+
-            "\nNome Fantasia: " + txtNomeFantasia.getText();
-    }
 }

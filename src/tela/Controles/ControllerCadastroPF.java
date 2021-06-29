@@ -20,6 +20,7 @@ public class ControllerCadastroPF {
     public Button btnCadastrar;
     public TextArea txtArea;
     public String clienteCadastrado;
+    
 
     //fechar app
     public void clickFechar(ActionEvent event){
@@ -42,12 +43,10 @@ public class ControllerCadastroPF {
             alert.setHeaderText("E-mail invalido");
             alert.setContentText("Informar um e-mail no padrão email@teste.com! ");
             alert.show();
-            System.out.println("Entrada invalida, tente novamente");
         }
 
         ClientePF novoClientePF = new ClientePF(nome,email,endereco,cpf);
-        txtArea.setText(toStringPF());
-        System.out.println(novoClientePF.toString());
+        txtArea.setText(novoClientePF.toString());
         Dados.listaClientes.add(novoClientePF);
         Dados.listaClientesPF.add(novoClientePF);
         limparDados();
@@ -72,14 +71,5 @@ public class ControllerCadastroPF {
         Main.mudarScene("login");
     }
 
-    //Mostrar os dados
-    public String toStringPF() {
-        return
-        "Cliente Cadastrado "+
-        "\nNome: " + txtNome.getText() +
-        "\nEndereço: " + txtEndereco.getText() +
-        "\nEmail: " + txtEmail.getText() +
-        "\nCPF: " + txtCpf.getText();
-    }   
 }
 

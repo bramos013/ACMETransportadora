@@ -16,7 +16,6 @@ public class ControllerStatusCarga {
     public Button btnStatusVoltar;
     public Button btnStatusConfirmar;
     public TextField txtCodigoStatus;
-    public Atendente status;
 
     //Busca a Carga e Chama o alterarSituacao
     public void alterarStatusCarga(ActionEvent event){              

@@ -67,6 +67,12 @@ public class ControllerMenuGerente {
         //Permitir simular apenas 1x
         btnSimular.setDisable(true);
 
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Atenção");
+        alert.setHeaderText("Só é possivel realizar uma única simulação");
+        alert.setContentText("Para simular novamente, feche o programa...");
+        alert.show();
+
         simulacao();
     }
 

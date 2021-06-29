@@ -18,23 +18,56 @@ public class ControllerStatusCarga {
     public TextField txtCodigoStatus;
     public Atendente status;
 
-    //Alterar Situacao Carga
+    //Busca a Carga e Chama o alterarSituacao
     public void alterarStatusCarga(ActionEvent event){              
         int codigoStatus = Integer.parseInt(txtCodigoStatus.getText());
+        String opcao = "";
         RadioButton op = (RadioButton) statusCarga.getSelectedToggle();                            
         if(op.getText().equals("Cancelada")){
-         String opcao = "Cancelada";               
-         //status.alteraSituacao(codigoStatus, opcao);
-         status.alteraSituacao(codigoStatus);
-    /*
+            opcao = "Cancelada";                        
+            alteraSituacao(codigoStatus,opcao);
         }else if(op.getText().equals("Entregue")){
-            status.alteraSituacao(codigoStatus,2);
+            alteraSituacao(codigoStatus,opcao);
+        }        
+    }           
+    
+    //
+    public String alteraSituacao(int codigo, String status) {
+        int count = 0;
+        for(int i = 0 ; i < Dados.listaCargas.size(); i++){
+            if(Dados.listaCargas.get(i).getCodigo() == codigo){
+                count++;
+            }
         }
-    */
-        System.out.println("Código Status: " + codigoStatus+
-                            "\nOpSelecionada " + opcao);
+        if(count == 0){
+            System.out.println("Carga não encontrada!");
+            return null;
         }
+    
+        for(int i = 0; i < Dados.listaCargas.size(); i++){
+            if(Dados.listaCargas.get(i).getSituacao().toUpperCase().equals("CANCELADA") || Dados.listaCargas.get(i).getSituacao().toUpperCase().equals("ENTREGUE")){
+                System.out.println("Erro: Status não pode ser alterado!");
+                return null;
+            }
+        }
+    
+        for(int i = 0 ; i < Dados.listaCargas.size(); i++){
+            if(Dados.listaCargas.get(i).getCodigo() == codigo){
+                if(status=="Cancelada"){
+                    System.out.println("Alterando para 'Cancelada'");
+                    Dados.listaCargas.get(i).setSituacao("Cancelada");
+    
+                }else if(status=="Entregue"){
+                    System.out.println("Alterando para 'Entregue'");
+                    Dados.listaCargas.get(i).setSituacao("Entregue");
+                }
+            }
+        }
+        System.out.println("Status alterado com sucesso!");
+        return null;
+    
     }
+    
     //fechar app
     public void clickFechar(ActionEvent event){
         System.exit(0);

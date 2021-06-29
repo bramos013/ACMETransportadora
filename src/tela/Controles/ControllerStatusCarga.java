@@ -2,10 +2,7 @@ package tela.Controles;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 
 public class ControllerStatusCarga {
     @FXML
@@ -17,17 +14,29 @@ public class ControllerStatusCarga {
     public TextField txtCodigoStatus;
 
     //Busca a Carga e Chama o alterarSituacao
-    public void alterarStatusCarga(ActionEvent event){              
-        int codigoStatus = Integer.parseInt(txtCodigoStatus.getText());
-        String opcao = "";
-        RadioButton op = (RadioButton) statusCarga.getSelectedToggle();                            
-        if(op.getText().equals("Cancelada")){
-            opcao = "Cancelada";                        
-            alteraSituacao(codigoStatus,opcao);
-        }else if(op.getText().equals("Entregue")){
-            alteraSituacao(codigoStatus,opcao);
-        }        
-    }           
+    public void alterarStatusCarga(ActionEvent event){
+        try{
+            int codigoStatus = Integer.parseInt(txtCodigoStatus.getText());
+            String opcao = "";
+            RadioButton op = (RadioButton) statusCarga.getSelectedToggle();
+            if(op.getText().equals("Cancelada")){
+                opcao = "Cancelada";
+                alteraSituacao(codigoStatus,opcao);
+            }else if(op.getText().equals("Entregue")){
+                alteraSituacao(codigoStatus,opcao);
+            }
+        }catch (RuntimeException e){
+            System.err.println("Código deve composto apenas por números");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setHeaderText("O código deve ser composto apenas por números");
+            alert.setContentText("Coloque o código corretamente para realizar a operação... ");
+            alert.show();
+        }finally {
+            txtCodigoStatus.clear();
+        }
+
+    }
     
     //Altera a situação da carga
     public void alteraSituacao(int codigo, String status) {
@@ -39,27 +48,47 @@ public class ControllerStatusCarga {
         }
         if(count == 0){
             System.out.println("Carga não encontrada!");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Erro");
+            alert.setHeaderText("Carga não encontrada");
+            alert.setContentText("Informe um novo código para realizar a operação... ");
+            alert.show();
+            return;
         }
     
         for(int i = 0; i < Dados.listaCargas.size(); i++){
-            if(Dados.listaCargas.get(i).getSituacao().toUpperCase().equals("CANCELADA") || Dados.listaCargas.get(i).getSituacao().toUpperCase().equals("ENTREGUE")){
-                System.out.println("Erro: Status não pode ser alterado!");
-            }
-        }
-    
-        for(int i = 0 ; i < Dados.listaCargas.size(); i++){
             if(Dados.listaCargas.get(i).getCodigo() == codigo){
-                if(status=="Cancelada"){
-                    System.out.println("Alterando para 'Cancelada'");
-                    Dados.listaCargas.get(i).setSituacao("Cancelada");
-    
-                }else if(status=="Entregue"){
-                    System.out.println("Alterando para 'Entregue'");
-                    Dados.listaCargas.get(i).setSituacao("Entregue");
+                if(Dados.listaCargas.get(i).getSituacao().equalsIgnoreCase("Cancelada") || Dados.listaCargas.get(i).getSituacao().equalsIgnoreCase("Entregue")) {
+                    System.out.println("Erro: Status não pode ser alterado!");
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Erro");
+                    alert.setHeaderText("Cargas com status CANCELADA ou ENTREGUE não podem ser alteradas!");
+                    alert.setContentText("Informe um novo código para realizar a operação... ");
+                    alert.show();
+                    return;
+
+                }else{
+                    if(status.equalsIgnoreCase("Cancelada")){
+                        System.out.println("Alterando para 'Cancelada'");
+                        Dados.listaCargas.get(i).setSituacao("Cancelada");
+
+                    }else if(status.equalsIgnoreCase("Entregue")){
+                        System.out.println("Alterando para 'Entregue'");
+                        Dados.listaCargas.get(i).setSituacao("Entregue");
+                    }
+                    System.out.println("Status alterado com sucesso!");
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                    alert.setTitle("Atualizado");
+                    alert.setHeaderText("Status alterado com sucesso!");
+                    alert.show();
+                    return;
                 }
+
+
             }
+
         }
-        System.out.println("Status alterado com sucesso!");    
+
     }
     
     //fechar app
@@ -70,5 +99,6 @@ public class ControllerStatusCarga {
     public void clickVoltar(ActionEvent event){
         Main.mudarScene("login");
     }
+
 
 }

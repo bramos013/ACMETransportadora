@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela.Controles.ControllerCadastroPJ">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela.Controles.ControllerCadastroPJ">
    <children>
       <VBox prefHeight="20.0" prefWidth="594.0">
          <children>
@@ -13,7 +22,7 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Arquivo">
                   <items>
-                    <MenuItem id="menuItemSair" fx:id="btnSair" mnemonicParsing="false" text="Sair" onAction="#clickFechar" />
+                    <MenuItem id="menuItemSair" fx:id="btnSair" mnemonicParsing="false" onAction="#clickFechar" text="Sair" />
                   </items>
                 </Menu>
               </menus>
@@ -69,8 +78,9 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Button fx:id="btnLimpar" layoutX="73.0" layoutY="238.0" mnemonicParsing="false" onAction="#clickLimpar" text="Limpar" />
-            <Button fx:id="btnCadastrar" layoutX="172.0" layoutY="238.0" mnemonicParsing="false" onAction="#cadastrarClientePJ" text="Cadastrar" />
+            <Button fx:id="btnLimpar" layoutX="110.0" layoutY="238.0" mnemonicParsing="false" onAction="#clickLimpar" text="Limpar" />
+            <Button fx:id="btnCadastrar" layoutX="190.0" layoutY="238.0" mnemonicParsing="false" onAction="#cadastrarClientePJ" text="Cadastrar" />
+            <Button fx:id="btnVoltar" layoutX="34.0" layoutY="238.0" mnemonicParsing="false" onAction="#clickVoltar" text="Voltar" />
          </children></AnchorPane>
       <TextArea fx:id="txtArea" layoutX="14.0" layoutY="351.0" prefHeight="206.0" prefWidth="573.0" />
    </children>

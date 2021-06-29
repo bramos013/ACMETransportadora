@@ -66,7 +66,7 @@ public class ControllerMenuGerente {
     public void clickSimular(javafx.event.ActionEvent event){
         //Permitir simular apenas 1x
         btnSimular.setDisable(true);
-
+        //Pop up de Alerta
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Atenção");
         alert.setHeaderText("Só é possivel realizar uma única simulação");

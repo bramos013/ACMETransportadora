@@ -35,7 +35,6 @@ public class ControllerCadastroPJ {
             alert.setHeaderText("Entrada inválida!");
             alert.setContentText("Você deve preencher todos os campos para realizar o cadastro.");
             alert.show();
-            System.out.println("Você deve preencher todos os campos para realizar o cadastro.");
             limparDados();
             return;
 
@@ -45,14 +44,12 @@ public class ControllerCadastroPJ {
             alert.setHeaderText("E-mail invalido");
             alert.setContentText("Informar um e-mail no padrão email@teste.com! ");
             alert.show();
-            System.out.println("E-mail invalido");
             limparDados();
             return;
 
         }else{
             ClientePJ novoClientePJ = new ClientePJ(nome,email,endereco,cnpj,nomeFantasia);
             txtArea.setText(novoClientePJ.toString());
-            System.out.println(novoClientePJ.toString());
             Dados.listaClientes.add(novoClientePJ);
             Dados.listaClientesPJ.add(novoClientePJ);
             limparDados();

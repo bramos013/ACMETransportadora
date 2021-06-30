@@ -128,7 +128,6 @@ public class ControllerCadastroCarga {
                 carga.setValorFrete(carga.calculaFrete(cliente));
                 //Mostra no text area a carga cadastrada
                 txtArea.setText(carga.toString());
-                System.out.println(carga.toString());
             }else{
                 CargaInternacional carga = new CargaInternacional(codigo,altura,largura,profundidade,peso,aeroportoOrigem,aeroportoDestino,cliente,aeroportoOrigem.getPais(),taxa);
                 Dados.listaCargas.add(carga);
@@ -136,7 +135,6 @@ public class ControllerCadastroCarga {
                 carga.setValorFrete(carga.calculaFrete(cliente));
                 //Mostra no text area a carga cadastrada
                 txtArea.setText(carga.toString());
-                System.out.println(carga.toString());
             }
 
         }catch (RuntimeException e){

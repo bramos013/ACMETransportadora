@@ -51,8 +51,7 @@ public class ControllerCadastroAeroporto {
             double latitude = Double.parseDouble(txtLatitude.getText());
             double longitude = Double.parseDouble(txtLongitude.getText());
 
-            if(codigoIATA.isEmpty()||nome.isEmpty()||pais.isEmpty()){
-                System.out.println("Todos os campos devem ser preenchidos para fazer o cadastro.");
+            if(codigoIATA.isEmpty()||nome.isEmpty()||pais.isEmpty()){                 
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Erro");
                 alert.setHeaderText("Todos os campos devem ser preenchidos para fazer o cadastro.");
@@ -62,8 +61,6 @@ public class ControllerCadastroAeroporto {
             }else{
                 for(Aeroporto aeroportos : Dados.listaAeroportos){
                     if(aeroportos.getcodigoIATA().equalsIgnoreCase(codigoIATA)){
-                        System.out.println("ERRO! Código já existente\nImpossível fazer o cadastro...");
-
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setTitle("Erro");
                         alert.setHeaderText("Código IATA já cadastrado!");
@@ -80,7 +77,6 @@ public class ControllerCadastroAeroporto {
                 alert.setHeaderText("Aeroporto cadastrado com sucesso!");
                 alert.show();
                 txtArea.setText("Cadastro efetuado com sucesso!\n" + novoAeroporto.toString());
-                System.out.println("Cadastro efetuado com sucesso!" + novoAeroporto.toString());
                 return;
             }
 

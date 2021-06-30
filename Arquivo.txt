@@ -1,0 +1,496 @@
+
+Cadastrando aeroporto Guarulhos
+Cadastrando aeroporto Salgado Filho
+Cadastrando aeroporto Heathrow
+Cadastrando cliente Maria
+Cadastrando cliente ACME Corporation
+Cadastrando Carga de Maria: Origem--> Salgado Filho | Destino--> Guarulhos
+Calculando Frete de Maria...
+Cadastrando Carga de Acme Corp: Origem--> Heathrow | Destino--> Salgado Filho
+Calculando Frete de Acme...
+Enviando Carga de Maria...
+
+-----LISTA DE AEROPORTOS-----
+
+Aeroporto de Guarulhos
+Codigo IATA: GRU
+Pais: Brasil
+Latitude: -23.4
+ e Longitude: -46.4
+
+Aeroporto de Salgado Filho
+Codigo IATA: POA
+Pais: Brasil
+Latitude: -29.9
+ e Longitude: -51.0
+
+Aeroporto de Heathrow
+Codigo IATA: LHR
+Pais: Inglaterra
+Latitude: 51.4
+ e Longitude: -0.4
+
+-----LISTA DE CLIENTES-----
+
+Dados do Cliente: 
+CPF: 123.456.789-01
+Nome: Maria
+Email: maria@hotmail.com
+Endereço: 3186 Garrison Union Apt. 362 - Sumter, WY 
+
+Dados da Empresa: 
+Nome Fantasia: ACME Corporation
+CNPJ: 12.345.678/0001-01
+Nome: ACME Corp
+Email: acme_corp@yahoo.com
+Endereço: 874 Toy Green Suite 335 - Fayetteville, WI
+
+-----LISTA DE CARGAS-----
+
+Carga 1:
+Dados da Carga
+
+Dados do Cliente: 
+CPF: 123.456.789-01
+Nome: Maria
+Email: maria@hotmail.com
+Endereço: 3186 Garrison Union Apt. 362 - Sumter, WY 
+
+Aeroporto de Origem: Salgado Filho
+Aeroporto de Destino: Guarulhos
+Altura: 0.2
+Largura: 0.2
+Peso: 1.0
+Profundidade: 0.2
+Situação: Enviado
+Código: 111
+Tipo de Carga: Nacional 
+Valor do Frete: R$ 51.0
+------------------------------------------
+------------------------------------------
+Carga 2:
+Dados da Carga
+
+Dados da Empresa: 
+Nome Fantasia: ACME Corporation
+CNPJ: 12.345.678/0001-01
+Nome: ACME Corp
+Email: acme_corp@yahoo.com
+Endereço: 874 Toy Green Suite 335 - Fayetteville, WI
+
+Aeroporto de Origem: Heathrow
+Aeroporto de Destino: Salgado Filho
+Altura: 1.0
+Largura: 1.0
+Peso: 10.0
+Profundidade: 1.0
+Situação: Pendente
+Código: 555
+País de Origem: Inglaterra
+Tipo de Carga: Internacional
+Valor do Frete: R$ 10760.0
+------------------------------------------
+------------------------------------------
+Fim da Simulação
+Cadastrando aeroporto Guarulhos
+Cadastrando aeroporto Salgado Filho
+Cadastrando aeroporto Heathrow
+Cadastrando cliente Maria
+Cadastrando cliente ACME Corporation
+Cadastrando Carga de Maria: Origem--> Salgado Filho | Destino--> Guarulhos
+Calculando Frete de Maria...
+Cadastrando Carga de Acme Corp: Origem--> Heathrow | Destino--> Salgado Filho
+Calculando Frete de Acme...
+Enviando Carga de Maria...
+
+-----LISTA DE AEROPORTOS-----
+
+Aeroporto de Guarulhos
+Codigo IATA: GRU
+Pais: Brasil
+Latitude: -23.4
+ e Longitude: -46.4
+
+Aeroporto de Salgado Filho
+Codigo IATA: POA
+Pais: Brasil
+Latitude: -29.9
+ e Longitude: -51.0
+
+Aeroporto de Heathrow
+Codigo IATA: LHR
+Pais: Inglaterra
+Latitude: 51.4
+ e Longitude: -0.4
+
+-----LISTA DE CLIENTES-----
+
+Dados do Cliente: 
+CPF: 123.456.789-01
+Nome: Maria
+Email: maria@hotmail.com
+Endereço: 3186 Garrison Union Apt. 362 - Sumter, WY 
+
+Dados da Empresa: 
+Nome Fantasia: ACME Corporation
+CNPJ: 12.345.678/0001-01
+Nome: ACME Corp
+Email: acme_corp@yahoo.com
+Endereço: 874 Toy Green Suite 335 - Fayetteville, WI
+
+-----LISTA DE CARGAS-----
+
+Carga 1:
+Dados da Carga
+
+Dados do Cliente: 
+CPF: 123.456.789-01
+Nome: Maria
+Email: maria@hotmail.com
+Endereço: 3186 Garrison Union Apt. 362 - Sumter, WY 
+
+Aeroporto de Origem: Salgado Filho
+Aeroporto de Destino: Guarulhos
+Altura: 0.2
+Largura: 0.2
+Peso: 1.0
+Profundidade: 0.2
+Situação: Enviado
+Código: 111
+Tipo de Carga: Nacional 
+Valor do Frete: R$ 51.0
+------------------------------------------
+------------------------------------------
+Carga 2:
+Dados da Carga
+
+Dados da Empresa: 
+Nome Fantasia: ACME Corporation
+CNPJ: 12.345.678/0001-01
+Nome: ACME Corp
+Email: acme_corp@yahoo.com
+Endereço: 874 Toy Green Suite 335 - Fayetteville, WI
+
+Aeroporto de Origem: Heathrow
+Aeroporto de Destino: Salgado Filho
+Altura: 1.0
+Largura: 1.0
+Peso: 10.0
+Profundidade: 1.0
+Situação: Pendente
+Código: 555
+País de Origem: Inglaterra
+Tipo de Carga: Internacional
+Valor do Frete: R$ 10760.0
+------------------------------------------
+------------------------------------------
+Fim da Simulação
+Cadastrando aeroporto Guarulhos
+Cadastrando aeroporto Salgado Filho
+Cadastrando aeroporto Heathrow
+Cadastrando cliente Maria
+Cadastrando cliente ACME Corporation
+Cadastrando Carga de Maria: Origem--> Salgado Filho | Destino--> Guarulhos
+Calculando Frete de Maria...
+Cadastrando Carga de Acme Corp: Origem--> Heathrow | Destino--> Salgado Filho
+Calculando Frete de Acme...
+Enviando Carga de Maria...
+
+-----LISTA DE AEROPORTOS-----
+
+Aeroporto de Guarulhos
+Codigo IATA: GRU
+Pais: Brasil
+Latitude: -23.4
+ e Longitude: -46.4
+
+Aeroporto de Salgado Filho
+Codigo IATA: POA
+Pais: Brasil
+Latitude: -29.9
+ e Longitude: -51.0
+
+Aeroporto de Heathrow
+Codigo IATA: LHR
+Pais: Inglaterra
+Latitude: 51.4
+ e Longitude: -0.4
+
+-----LISTA DE CLIENTES-----
+
+Dados do Cliente: 
+CPF: 123.456.789-01
+Nome: Maria
+Email: maria@hotmail.com
+Endereço: 3186 Garrison Union Apt. 362 - Sumter, WY 
+
+Dados da Empresa: 
+Nome Fantasia: ACME Corporation
+CNPJ: 12.345.678/0001-01
+Nome: ACME Corp
+Email: acme_corp@yahoo.com
+Endereço: 874 Toy Green Suite 335 - Fayetteville, WI
+
+-----LISTA DE CARGAS-----
+
+Carga 1:
+Dados da Carga
+
+Dados do Cliente: 
+CPF: 123.456.789-01
+Nome: Maria
+Email: maria@hotmail.com
+Endereço: 3186 Garrison Union Apt. 362 - Sumter, WY 
+
+Aeroporto de Origem: Salgado Filho
+Aeroporto de Destino: Guarulhos
+Altura: 0.2
+Largura: 0.2
+Peso: 1.0
+Profundidade: 0.2
+Situação: Enviado
+Código: 111
+Tipo de Carga: Nacional 
+Valor do Frete: R$ 51.0
+------------------------------------------
+------------------------------------------
+Carga 2:
+Dados da Carga
+
+Dados da Empresa: 
+Nome Fantasia: ACME Corporation
+CNPJ: 12.345.678/0001-01
+Nome: ACME Corp
+Email: acme_corp@yahoo.com
+Endereço: 874 Toy Green Suite 335 - Fayetteville, WI
+
+Aeroporto de Origem: Heathrow
+Aeroporto de Destino: Salgado Filho
+Altura: 1.0
+Largura: 1.0
+Peso: 10.0
+Profundidade: 1.0
+Situação: Pendente
+Código: 555
+País de Origem: Inglaterra
+Tipo de Carga: Internacional
+Valor do Frete: R$ 10760.0
+------------------------------------------
+------------------------------------------
+Fim da Simulação
+Cadastrando aeroporto Guarulhos
+Cadastrando aeroporto Salgado Filho
+Cadastrando aeroporto Heathrow
+Cadastrando cliente Maria
+Cadastrando cliente ACME Corporation
+Cadastrando Carga de Maria: Origem--> Salgado Filho | Destino--> Guarulhos
+Calculando Frete de Maria...
+Cadastrando Carga de Acme Corp: Origem--> Heathrow | Destino--> Salgado Filho
+Calculando Frete de Acme...
+Enviando Carga de Maria...
+
+-----LISTA DE AEROPORTOS-----
+
+Aeroporto de Guarulhos
+Codigo IATA: GRU
+Pais: Brasil
+Latitude: -23.4
+ e Longitude: -46.4
+
+Aeroporto de Salgado Filho
+Codigo IATA: POA
+Pais: Brasil
+Latitude: -29.9
+ e Longitude: -51.0
+
+Aeroporto de Heathrow
+Codigo IATA: LHR
+Pais: Inglaterra
+Latitude: 51.4
+ e Longitude: -0.4
+
+-----LISTA DE CLIENTES-----
+
+Dados do Cliente: 
+CPF: 123.456.789-01
+Nome: Maria
+Email: maria@hotmail.com
+Endereço: 3186 Garrison Union Apt. 362 - Sumter, WY 
+
+Dados da Empresa: 
+Nome Fantasia: ACME Corporation
+CNPJ: 12.345.678/0001-01
+Nome: ACME Corp
+Email: acme_corp@yahoo.com
+Endereço: 874 Toy Green Suite 335 - Fayetteville, WI
+
+-----LISTA DE CARGAS-----
+
+Carga 1:
+Dados da Carga
+
+Dados do Cliente: 
+CPF: 123.456.789-01
+Nome: Maria
+Email: maria@hotmail.com
+Endereço: 3186 Garrison Union Apt. 362 - Sumter, WY 
+
+Aeroporto de Origem: Salgado Filho
+Aeroporto de Destino: Guarulhos
+Altura: 0.2
+Largura: 0.2
+Peso: 1.0
+Profundidade: 0.2
+Situação: Enviado
+Código: 111
+Tipo de Carga: Nacional 
+Valor do Frete: R$ 51.0
+------------------------------------------
+------------------------------------------
+Carga 2:
+Dados da Carga
+
+Dados da Empresa: 
+Nome Fantasia: ACME Corporation
+CNPJ: 12.345.678/0001-01
+Nome: ACME Corp
+Email: acme_corp@yahoo.com
+Endereço: 874 Toy Green Suite 335 - Fayetteville, WI
+
+Aeroporto de Origem: Heathrow
+Aeroporto de Destino: Salgado Filho
+Altura: 1.0
+Largura: 1.0
+Peso: 10.0
+Profundidade: 1.0
+Situação: Pendente
+Código: 555
+País de Origem: Inglaterra
+Tipo de Carga: Internacional
+Valor do Frete: R$ 10760.0
+------------------------------------------
+------------------------------------------
+Fim da Simulação
+Cadastrando aeroporto Guarulhos
+Cadastrando aeroporto Salgado Filho
+Cadastrando aeroporto Heathrow
+Cadastrando cliente Maria
+Cadastrando cliente ACME Corporation
+Cadastrando cliente João
+Cadastrando Carga de Maria: Origem--> Salgado Filho | Destino--> Guarulhos
+Calculando Frete de Maria...
+Cadastrando Carga de Acme Corp: Origem--> Heathrow | Destino--> Salgado Filho
+Calculando Frete de Acme...
+Cadastrando Carga de João: Origem--> Guarulhos | Destino--> Salgado Filho
+Calculando Frete de João...
+Enviando Carga de Maria...
+
+-----LISTA DE AEROPORTOS-----
+
+Aeroporto de Guarulhos
+Codigo IATA: GRU
+Pais: Brasil
+Latitude: -23.4
+ e Longitude: -46.4
+
+Aeroporto de Salgado Filho
+Codigo IATA: POA
+Pais: Brasil
+Latitude: -29.9
+ e Longitude: -51.0
+
+Aeroporto de Heathrow
+Codigo IATA: LHR
+Pais: Inglaterra
+Latitude: 51.4
+ e Longitude: -0.4
+
+-----LISTA DE CLIENTES-----
+
+Dados do Cliente: 
+CPF: 123.456.789-01
+Nome: Maria
+Email: maria@hotmail.com
+Endereço: 3186 Garrison Union Apt. 362 - Sumter, WY 
+
+Dados da Empresa: 
+Nome Fantasia: ACME Corporation
+CNPJ: 12.345.678/0001-01
+Nome: ACME Corp
+Email: acme_corp@yahoo.com
+Endereço: 874 Toy Green Suite 335 - Fayetteville, WI
+
+Dados do Cliente: 
+CPF: 456.256.543-05
+Nome: João
+Email: joao@yahoo.com
+Endereço: Praça Teixeira Freitas 46, Dom Pedro, MA
+
+-----LISTA DE CARGAS-----
+
+Carga 1:
+Dados da Carga
+
+Dados do Cliente: 
+CPF: 123.456.789-01
+Nome: Maria
+Email: maria@hotmail.com
+Endereço: 3186 Garrison Union Apt. 362 - Sumter, WY 
+
+Aeroporto de Origem: Salgado Filho
+Aeroporto de Destino: Guarulhos
+Altura: 0.2
+Largura: 0.2
+Peso: 1.0
+Profundidade: 0.2
+Situação: Enviado
+Código: 111
+Tipo de Carga: Nacional 
+Valor do Frete: R$ 51.0
+------------------------------------------
+------------------------------------------
+Carga 2:
+Dados da Carga
+
+Dados da Empresa: 
+Nome Fantasia: ACME Corporation
+CNPJ: 12.345.678/0001-01
+Nome: ACME Corp
+Email: acme_corp@yahoo.com
+Endereço: 874 Toy Green Suite 335 - Fayetteville, WI
+
+Aeroporto de Origem: Heathrow
+Aeroporto de Destino: Salgado Filho
+Altura: 1.0
+Largura: 1.0
+Peso: 10.0
+Profundidade: 1.0
+Situação: Em transporte
+Código: 555
+País de Origem: Inglaterra
+Tipo de Carga: Internacional
+Valor do Frete: R$ 10760.0
+------------------------------------------
+------------------------------------------
+Carga 3:
+Dados da Carga
+
+Dados do Cliente: 
+CPF: 456.256.543-05
+Nome: João
+Email: joao@yahoo.com
+Endereço: Praça Teixeira Freitas 46, Dom Pedro, MA
+
+Aeroporto de Origem: Guarulhos
+Aeroporto de Destino: Salgado Filho
+Altura: 1.0
+Largura: 1.5
+Peso: 7.5
+Profundidade: 1.0
+Situação: Em transporte
+Código: 471
+Tipo de Carga: Nacional 
+Valor do Frete: R$ 1047.0
+------------------------------------------
+------------------------------------------
+Fim da Simulação

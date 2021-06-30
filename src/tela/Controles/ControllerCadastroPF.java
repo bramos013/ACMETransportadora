@@ -39,7 +39,6 @@ public class ControllerCadastroPF {
             alert.setHeaderText("Entrada inválida!");
             alert.setContentText("Você deve preencher todos os campos para realizar o cadastro.");
             alert.show();
-            System.out.println("Você deve preencher todos os campos para realizar o cadastro.");
             limparDados();
             return;
 
@@ -49,7 +48,6 @@ public class ControllerCadastroPF {
             alert.setHeaderText("E-mail invalido");
             alert.setContentText("Informar um e-mail no padrão email@teste.com! ");
             alert.show();
-            System.out.println("E-mail invalido");
             limparDados();
             return;
 

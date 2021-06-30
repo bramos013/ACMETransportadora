@@ -47,7 +47,6 @@ public class ControllerStatusCarga {
             }
         }
         if(count == 0){
-            System.out.println("Carga não encontrada!");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Erro");
             alert.setHeaderText("Carga não encontrada");
@@ -58,8 +57,7 @@ public class ControllerStatusCarga {
     
         for(int i = 0; i < Dados.listaCargas.size(); i++){
             if(Dados.listaCargas.get(i).getCodigo() == codigo){
-                if(Dados.listaCargas.get(i).getSituacao().equalsIgnoreCase("Cancelada") || Dados.listaCargas.get(i).getSituacao().equalsIgnoreCase("Entregue")) {
-                    System.out.println("Erro: Status não pode ser alterado!");
+                if(Dados.listaCargas.get(i).getSituacao().equalsIgnoreCase("Cancelada") || Dados.listaCargas.get(i).getSituacao().equalsIgnoreCase("Entregue")) {                    
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Erro");
                     alert.setHeaderText("Cargas com status CANCELADA ou ENTREGUE não podem ser alteradas!");
@@ -69,26 +67,18 @@ public class ControllerStatusCarga {
 
                 }else{
                     if(status.equalsIgnoreCase("Cancelada")){
-                        System.out.println("Alterando para 'Cancelada'");
                         Dados.listaCargas.get(i).setSituacao("Cancelada");
-
                     }else if(status.equalsIgnoreCase("Entregue")){
-                        System.out.println("Alterando para 'Entregue'");
                         Dados.listaCargas.get(i).setSituacao("Entregue");
                     }
-                    System.out.println("Status alterado com sucesso!");
                     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setTitle("Atualizado");
                     alert.setHeaderText("Status alterado com sucesso!");
                     alert.show();
                     return;
                 }
-
-
             }
-
         }
-
     }
     
     //fechar app

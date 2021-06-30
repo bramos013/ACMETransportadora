@@ -3,6 +3,10 @@ package tela.Controles;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class ControllerConsultasGerente {
     @FXML
     private ToggleGroup consultas;

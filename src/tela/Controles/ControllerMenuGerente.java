@@ -4,6 +4,11 @@ import codigo.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class ControllerMenuGerente {
     @FXML
     private ToggleGroup OptionGerente;
@@ -16,7 +21,9 @@ public class ControllerMenuGerente {
     public Button btnVoltar;
     public Button btnConfirmar;
     public Button btnSimular;
+    public Button btnGravaTxt;
     public TextArea txtArea;
+    public String txt="";
 
     //fechar app
     public void clickFechar(javafx.event.ActionEvent event){
@@ -77,8 +84,6 @@ public class ControllerMenuGerente {
     }
 
     public void simulacao(){
-        String txt="";
-
         System.out.println("Cadastrando aeroporto Guarulhos");
         txt = txt + "Cadastrando aeroporto Guarulhos\n";
         Aeroporto gru = new Aeroporto("GRU", "Guarulhos", "Brasil", -23.4, -46.4);
@@ -128,10 +133,6 @@ public class ControllerMenuGerente {
         txt = txt + "Enviando Carga de Maria...\n";
         cargaMaria.enviar();
 
-        System.out.println("Enviando Carga de Acme...");
-        txt = txt + "Enviando Carga de Acme...\n";
-        cargaAcme.enviar();
-
         System.out.println("-----LISTA DE AEROPORTOS-----");
         txt = txt + "\n-----LISTA DE AEROPORTOS-----\n";
         if(Dados.listaAeroportos.size()==0){
@@ -171,12 +172,41 @@ public class ControllerMenuGerente {
             }
         }
 
-        System.out.println("Fim da Simulação");
-        txt = txt + "Fim da Simulação";
+        System.out.println("\nFim da Simulação");
+        txt = txt + "\nFim da Simulação";
 
         txtArea.setText(txt);
     }
 
+    public void clickCarregaDadosEmArquivo(){
+        try{
+            System.out.println("\nInforme um arquivo .txt existente!\nArquivo utilizado: Arquivo.txt");
+            String path = "Arquivo.txt";
 
+            System.out.println("\nArmazenando dados no arquivo informado...");
+            try(BufferedWriter bw = new BufferedWriter(new FileWriter(path,true))){
+                //Escrever no arquivo
+                bw.write(txt);
+                //Quebrar linha
+                bw.newLine();
+
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Sucesso");
+                alert.setHeaderText("Armazenamento de dados foi executada com sucesso!");
+                alert.setContentText("Consulte o arquivo 'Arquivo.txt' para vizualizar os dados");
+                alert.show();
+            }
+            catch (IOException e){
+                System.err.println("Erro no armazenamento..." + e.getMessage());
+            }
+
+        }
+        catch (NullPointerException e){
+            System.err.println("Erro! " + e.getMessage());
+        }
+        finally {
+            System.out.println("Operação finalizada...");
+        }
+    }
 
 }

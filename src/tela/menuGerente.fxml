@@ -50,10 +50,11 @@
             <RadioButton fx:id="rbCadastroCarga" layoutX="18.0" layoutY="100.0" mnemonicParsing="false" text="Cadastrar Carga" toggleGroup="$OptionGerente" />
             <RadioButton fx:id="rbAlterarSituacaoCarga" layoutX="18.0" layoutY="126.0" mnemonicParsing="false" text="Alterar Situaçao da Carga" toggleGroup="$OptionGerente" />
             <RadioButton fx:id="rbCadastroAeroporto" layoutX="18.0" layoutY="175.0" mnemonicParsing="false" text="Cadastrar Aeroporto" toggleGroup="$OptionGerente" />
-            <Button fx:id="btnVoltar" layoutX="27.0" layoutY="221.0" mnemonicParsing="false" onAction="#clickVoltar" text="Voltar" />
-            <Button fx:id="btnConfirmar" layoutX="95.0" layoutY="221.0" mnemonicParsing="false" onAction="#clickConfirmar" text="Confirmar" />
-            <Button fx:id="btnSimular" layoutX="181.0" layoutY="221.0" mnemonicParsing="false" onAction="#clickSimular" text="Simular" />
+            <Button fx:id="btnVoltar" layoutX="28.0" layoutY="209.0" mnemonicParsing="false" onAction="#clickVoltar" text="Voltar" />
+            <Button fx:id="btnConfirmar" layoutX="105.0" layoutY="209.0" mnemonicParsing="false" onAction="#clickConfirmar" prefHeight="25.0" prefWidth="70.0" text="Confirmar" />
+            <Button fx:id="btnSimular" layoutX="204.0" layoutY="209.0" mnemonicParsing="false" onAction="#clickSimular" text="Simular" />
             <RadioButton fx:id="rbCadastroCliente1" layoutX="18.0" layoutY="50.0" mnemonicParsing="false" selected="true" text="Cadastrar Cliente PF" toggleGroup="$OptionGerente" />
+            <Button fx:id="btnGravaTxt" layoutX="71.0" layoutY="247.0" mnemonicParsing="false" onAction="#clickCarregaDadosEmArquivo" prefHeight="25.0" prefWidth="144.0" text="Gravar em Arquivo txt" />
          </children></AnchorPane>
       <TextArea fx:id="txtArea" layoutX="8.0" layoutY="345.0" prefHeight="206.0" prefWidth="579.0" />
    </children>

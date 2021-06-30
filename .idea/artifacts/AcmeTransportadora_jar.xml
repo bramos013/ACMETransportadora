@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AcmeTransportadora:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AcmeTransportadora_jar</output-path>
+    <root id="archive" name="AcmeTransportadora.jar">
+      <element id="module-output" name="AcmeTransportadora" />
+      <element id="extracted-dir" path="$USER_HOME$/javafx-sdk-16/lib/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/javafx-sdk-16/lib/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/javafx-sdk-16/lib/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/javafx-sdk-16/lib/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/javafx-sdk-16/lib/javafx.graphics.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/javafx-sdk-16/lib/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/javafx-sdk-16/lib/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/javafx-sdk-16/lib/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/11/javafx-fxml-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/11/javafx-fxml-11-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/11/javafx-controls-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/11/javafx-controls-11-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/11/javafx-graphics-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/11/javafx-graphics-11-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/11/javafx-base-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/11/javafx-base-11-win.jar" path-in-jar="/" />
+      <element id="library" level="application" name="javafx-swt" />
+      <element id="library" level="module" name="javafx-fxml" module-name="AcmeTransportadora" />
+    </root>
+  </artifact>
+</component>

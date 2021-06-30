@@ -26,34 +26,34 @@ public class Main extends Application {
         palcoPrimario.setTitle("ACME Transportadora");
 
         //Atribuir as telas fxml à variáveis
-        Parent fxmlLogin = FXMLLoader.load(getClass().getResource("../login.fxml"));
+        Parent fxmlLogin = FXMLLoader.load(getClass().getResource("/tela/login.fxml"));
         loginScene = new Scene(fxmlLogin,600,569);
 
-        Parent fxmlCadastroAeroporto  = FXMLLoader.load(getClass().getResource("../cadastroAeroporto.fxml"));
+        Parent fxmlCadastroAeroporto  = FXMLLoader.load(getClass().getResource("/tela/cadastroAeroporto.fxml"));
         cadastroAeroportoScene = new Scene(fxmlCadastroAeroporto,600,569);
 
-        Parent fxmlCadastroCarga  = FXMLLoader.load(getClass().getResource("../cadastroCarga.fxml"));
+        Parent fxmlCadastroCarga  = FXMLLoader.load(getClass().getResource("/tela/cadastroCarga.fxml"));
         cadastroCargaScene = new Scene(fxmlCadastroCarga,600,569);
 
-        Parent fxmlCadastroPf  = FXMLLoader.load(getClass().getResource("../cadastroPF.fxml"));
+        Parent fxmlCadastroPf  = FXMLLoader.load(getClass().getResource("/tela/cadastroPF.fxml"));
         cadastroPfScene = new Scene(fxmlCadastroPf,600,569);
 
-        Parent fxmlCadastroPj  = FXMLLoader.load(getClass().getResource("../cadastroPJ.fxml"));
+        Parent fxmlCadastroPj  = FXMLLoader.load(getClass().getResource("/tela/cadastroPJ.fxml"));
         cadastroPjScene = new Scene(fxmlCadastroPj,600,569);
 
-        Parent fxmlConsultasAtendente  = FXMLLoader.load(getClass().getResource("../consultasAtendente.fxml"));
+        Parent fxmlConsultasAtendente  = FXMLLoader.load(getClass().getResource("/tela/consultasAtendente.fxml"));
         consultasAtendenteScene = new Scene(fxmlConsultasAtendente,600,569);
 
-        Parent fxmlStatusCarga = FXMLLoader.load(getClass().getResource("../statusCarga.fxml"));
+        Parent fxmlStatusCarga = FXMLLoader.load(getClass().getResource("/tela/statusCarga.fxml"));
         statusCargaScene = new Scene(fxmlStatusCarga,600,569);
 
-        Parent fxmlConsultasGerente  = FXMLLoader.load(getClass().getResource("../consultasGerente.fxml"));
+        Parent fxmlConsultasGerente  = FXMLLoader.load(getClass().getResource("/tela/consultasGerente.fxml"));
         consultasGerenteScene = new Scene(fxmlConsultasGerente,600,569);
 
-        Parent fxmlMenuAtendente  = FXMLLoader.load(getClass().getResource("../menuAtendente.fxml"));
+        Parent fxmlMenuAtendente  = FXMLLoader.load(getClass().getResource("/tela/menuAtendente.fxml"));
         menuAtendenteScene = new Scene(fxmlMenuAtendente,600,569);
 
-        Parent fxmlMenuGerente  = FXMLLoader.load(getClass().getResource("../menuGerente.fxml"));
+        Parent fxmlMenuGerente  = FXMLLoader.load(getClass().getResource("/tela/menuGerente.fxml"));
         menuGerenteScene = new Scene(fxmlMenuGerente,600,569);
 
         //Não permitir alterar tmanho da tela

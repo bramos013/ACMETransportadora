@@ -21,9 +21,9 @@ public class ControllerMenuGerente {
     public Button btnVoltar;
     public Button btnConfirmar;
     public Button btnSimular;
-    public Button btnGravaTxt;
     public TextArea txtArea;
     public String txt="";
+    public Pilha pilha = new Pilha();
 
     //fechar app
     public void clickFechar(javafx.event.ActionEvent event){
@@ -70,7 +70,7 @@ public class ControllerMenuGerente {
 
     }
 
-    public void clickSimular(javafx.event.ActionEvent event){
+    public void clickSimular(javafx.event.ActionEvent event) throws Pilha.FullStackException {
         //Permitir simular apenas 1x
         btnSimular.setDisable(true);
         //Pop up de Alerta
@@ -83,51 +83,81 @@ public class ControllerMenuGerente {
         simulacao();
     }
 
-    public void simulacao(){
+    public void simulacao() throws Pilha.FullStackException {
+        //Cadastro Aeroporto
         System.out.println("Cadastrando aeroporto Guarulhos");
         txt = txt + "Cadastrando aeroporto Guarulhos\n";
         Aeroporto gru = new Aeroporto("GRU", "Guarulhos", "Brasil", -23.4, -46.4);
         Dados.listaAeroportos.add(gru);
 
+        //Cadastro Aeroporto
         System.out.println("Cadastrando aeroporto Salgado Filho");
         txt = txt + "Cadastrando aeroporto Salgado Filho\n";
         Aeroporto poa = new Aeroporto("POA", "Salgado Filho", "Brasil", -29.9, -51);
         Dados.listaAeroportos.add(poa);
 
+        //Cadastro Aeroporto
         System.out.println("Cadastrando aeroporto Heathrow");
         txt = txt + "Cadastrando aeroporto Heathrow\n";
         Aeroporto lhr = new Aeroporto("LHR", "Heathrow", "Inglaterra", 51.4, -0.4);
         Dados.listaAeroportos.add(lhr);
 
+        //Cadastro Cliente
         System.out.println("Cadastrando cliente Maria...");
         txt = txt + "Cadastrando cliente Maria\n";
         ClientePF maria = new ClientePF("Maria", "maria@hotmail.com", "3186 Garrison Union Apt. 362 - Sumter, WY ", "123.456.789-01");
         Dados.listaClientes.add(maria);
         Dados.listaClientesPF.add(maria);
 
+        //Cadastro Cliente
         System.out.println("Cadastrando cliente ACME Corporation");
         txt = txt + "Cadastrando cliente ACME Corporation\n";
         ClientePJ acme = new ClientePJ("ACME Corp", "acme_corp@yahoo.com", "874 Toy Green Suite 335 - Fayetteville, WI", "12.345.678/0001-01", "ACME Corporation");
         Dados.listaClientes.add(acme);
         Dados.listaClientesPJ.add(acme);
 
+        //Cadastro Cliente
+        System.out.println("Cadastrando cliente João");
+        txt = txt + "Cadastrando cliente João\n";
+        ClientePF joao = new ClientePF("João", "joao@yahoo.com", "Praça Teixeira Freitas 46, Dom Pedro, MA", "456.256.543-05");
+        Dados.listaClientes.add(joao);
+        Dados.listaClientesPF.add(joao);
+
+        //Cadastro Carga
         System.out.println("Cadastrando Carga de Maria: Origem--> Salgado Filho | Destino--> Guarulhos");
         txt = txt + "Cadastrando Carga de Maria: Origem--> Salgado Filho | Destino--> Guarulhos\n";
         CargaNacional cargaMaria = new CargaNacional(111, 0.2, 0.2, 0.2, 1, poa, gru, maria, 50);
+        cargaMaria.setSituacao("Em transporte");
         Dados.listaCargas.add(cargaMaria);
+        pilha.push(cargaMaria);
 
         System.out.println("Calculando Frete de Maria...");
         txt = txt + "Calculando Frete de Maria...\n";
         cargaMaria.calculaFrete(cargaMaria.getCliente());
 
+        //Cadastro Carga
         System.out.println("Cadastrando Carga de Acme Corp: Origem--> Heathrow | Destino--> Salgado Filho");
         txt = txt + "Cadastrando Carga de Acme Corp: Origem--> Heathrow | Destino--> Salgado Filho\n";
         CargaInternacional cargaAcme = new CargaInternacional(555, 1, 1, 1, 10, lhr, poa, acme, lhr.getPais(), 100);
+        cargaAcme.setSituacao("Em transporte");
         Dados.listaCargas.add(cargaAcme);
+        pilha.push(cargaAcme);
 
         System.out.println("Calculando Frete de Acme...");
         txt = txt + "Calculando Frete de Acme...\n";
         cargaAcme.calculaFrete(cargaAcme.getCliente());
+
+        //Cadastro Carga
+        System.out.println("Cadastrando Carga de João: Origem--> Guarulhos | Destino--> Salgado Filho");
+        txt = txt + "Cadastrando Carga de João: Origem--> Guarulhos | Destino--> Salgado Filho\n";
+        CargaNacional cargaJoao = new CargaNacional(471, 1, 1.5, 1, 7.5, gru, poa, joao, 50);
+        cargaJoao.setSituacao("Em transporte");
+        Dados.listaCargas.add(cargaJoao);
+        pilha.push(cargaJoao);
+
+        System.out.println("Calculando Frete de João...");
+        txt = txt + "Calculando Frete de João...\n";
+        cargaJoao.calculaFrete(cargaJoao.getCliente());
 
         System.out.println("Enviando Carga de Maria...");
         txt = txt + "Enviando Carga de Maria...\n";
